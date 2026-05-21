@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Almacen Virtual</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Proyecto 1</p>
+        <h1>Almacen virtual</h1>
+      </div>
+      <div class="header-actions">
+        <button id="adminViewBtn" class="mode-button active" type="button">Admin</button>
+        <button id="operatorViewBtn" class="mode-button" type="button">Operario</button>
+        <button id="loadDemoData" class="ghost" type="button">Cargar demo</button>
+        <button id="resetData" class="ghost" type="button">Reiniciar demo</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <div id="statusMessage" class="status-message hidden" role="status"></div>
+
+      <section id="adminSetup" class="panel setup">
+        <h2>Crear almacen</h2>
+        <form id="warehouseForm" class="form-grid">
+          <label>
+            Nombre
+            <input id="warehouseName" type="text" placeholder="Deposito central" required>
+          </label>
+          <label>
+            Superficie m2
+            <input id="warehouseArea" type="number" min="1" step="1" placeholder="120" required>
+          </label>
+          <label>
+            Ancho en metros
+            <input id="warehouseWidth" type="number" min="1" step="0.1" placeholder="12" required>
+          </label>
+          <label>
+            Largo en metros
+            <input id="warehouseLength" type="number" min="1" step="0.1" placeholder="10" required>
+          </label>
+          <button type="submit">Guardar almacen</button>
+        </form>
+      </section>
+
+      <section class="summary" aria-live="polite">
+        <article>
+          <span>Almacen</span>
+          <strong id="summaryName">Sin crear</strong>
+        </article>
+        <article>
+          <span>Superficie</span>
+          <strong id="summaryArea">0 m2</strong>
+        </article>
+        <article>
+          <span>Estantes</span>
+          <strong id="summaryShelves">0</strong>
+        </article>
+        <article>
+          <span>Existencias</span>
+          <strong id="summaryStock">0</strong>
+        </article>
+      </section>
+
+      <section id="workbench" class="workbench">
+        <div class="visual-zone">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Vista superior</p>
+              <h2>Plano 2D del almacen</h2>
+            </div>
+            <p id="mapHint">Admin: arrastra estantes. Operario: consulta ubicaciones y existencias.</p>
+          </div>
+          <div id="warehouseMap" class="warehouse-map" aria-label="Mapa de estantes"></div>
+          <div class="front-panel">
+            <div class="section-title compact">
+              <div>
+                <p class="eyebrow">Vista frontal</p>
+                <h2 id="frontTitle">Selecciona un estante</h2>
+              </div>
+              <p id="frontHint">El estante seleccionado se vera con sus niveles y productos.</p>
+            </div>
+            <div id="shelfFront" class="shelf-front" aria-label="Vista frontal del estante"></div>
+          </div>
+        </div>
+
+        <aside class="panel controls">
+          <h2>Panel admin</h2>
+          <form id="shelfForm" class="stacked">
+            <label>
+              Codigo del estante
+              <input id="shelfCode" type="text" placeholder="A-01" required>
+            </label>
+            <label>
+              Ancho
+              <input id="shelfWidth" type="number" min="1" step="0.1" placeholder="2.4" required>
+            </label>
+            <label>
+              Alto
+              <input id="shelfHeight" type="number" min="1" step="0.1" placeholder="2" required>
+            </label>
+            <label>
+              Columnas
+              <input id="shelfColumns" type="number" min="1" max="8" step="1" placeholder="4" required>
+            </label>
+            <label>
+              Filas
+              <input id="shelfRows" type="number" min="1" max="8" step="1" placeholder="3" required>
+            </label>
+            <button type="submit">Crear estante</button>
+          </form>
+        </aside>
+      </section>
+
+      <section id="detailGrid" class="detail-grid">
+        <article id="adminPanel" class="panel">
+          <h2 id="selectedTitle">Selecciona una seccion</h2>
+          <p id="selectedMeta" class="muted">Todavia no hay una ubicacion activa.</p>
+          <form id="stockForm" class="form-grid hidden">
+            <label>
+              Codigo
+              <input id="itemCode" type="text" placeholder="SKU-1001" required>
+            </label>
+            <label>
+              Producto
+              <input id="itemName" type="text" placeholder="Tornillos 8 mm" required>
+            </label>
+            <label>
+              Cantidad
+              <input id="itemQty" type="number" min="1" step="1" placeholder="50" required>
+            </label>
+            <label>
+              Foto
+              <input id="itemPhoto" type="file" accept="image/*">
+            </label>
+            <button type="submit">Cargar existencia</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h2>Contenido</h2>
+          <div id="stockList" class="stock-list">
+            <p class="muted">El contenido de la seccion aparecera aca.</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="operatorPanel" class="operator-grid hidden">
+        <article class="panel">
+          <h2>Registrar movimiento</h2>
+          <p id="operatorSelection" class="muted">Selecciona una celda con productos para registrar una entrada o salida.</p>
+          <form id="movementForm" class="stacked hidden">
+            <label>
+              Producto
+              <select id="movementItem" required></select>
+            </label>
+            <label>
+              Movimiento
+              <select id="movementType" required>
+                <option value="in">Se abastecio</option>
+                <option value="out">Se retiro</option>
+              </select>
+            </label>
+            <label>
+              Cantidad
+              <input id="movementQty" type="number" min="1" step="1" placeholder="5" required>
+            </label>
+            <label>
+              Observacion
+              <input id="movementNote" type="text" placeholder="Orden, motivo o referencia">
+            </label>
+            <button type="submit">Reportar movimiento</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h2>Reabastecimiento</h2>
+          <div id="restockList" class="stock-list">
+            <p class="muted">Selecciona una ubicacion para pedir reposicion de sus productos.</p>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>Historial operario</h2>
+          <div id="reportList" class="stock-list">
+            <p class="muted">Los reportes apareceran aca.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
