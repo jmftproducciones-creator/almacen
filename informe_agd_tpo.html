@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Trabajo Practico Obligatorio - AGD</title>
+    <style>
+      body {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 24px;
+        color: #1f2933;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.55;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #12372f;
+        line-height: 1.2;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #cbd5df;
+        padding: 8px 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #eef4f0;
+      }
+
+      pre {
+        overflow: auto;
+        border: 1px solid #cbd5df;
+        border-radius: 8px;
+        padding: 14px;
+        background: #f8fafc;
+      }
+
+      .cover {
+        min-height: 85vh;
+        display: grid;
+        align-content: center;
+        gap: 14px;
+        text-align: center;
+        page-break-after: always;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          max-width: none;
+          padding: 20mm;
+          font-size: 12pt;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <h1>Trabajo Practico Obligatorio</h1>
+      <p><strong>Tema:</strong> Analisis organizacional, procesos, sistemas y propuesta de mejora para AGD</p>
+      <p><strong>Empresa:</strong> Aceitera General Deheza S.A.</p>
+      <p><strong>Materia:</strong> Gestion de proyectos, auditoria y control de gestion</p>
+      <p><strong>Estudiante:</strong> Completar nombre</p>
+      <p><strong>Profesor:</strong> Completar nombre</p>
+      <p><strong>Fecha:</strong> Mayo de 2026</p>
+    </section>
+
+    <h2>Indice</h2>
+    <ol>
+      <li>Introduccion</li>
+      <li>Perfil de la organizacion</li>
+      <li>Relevamiento de procesos y modelado</li>
+      <li>Evaluacion de sistemas y auditoria</li>
+      <li>Propuesta de proyecto y presupuesto</li>
+      <li>Conclusion y reflexion critica</li>
+      <li>Anexos</li>
+      <li>Referencias</li>
+    </ol>
+
+    <h2>1. Introduccion</h2>
+    <p>El presente informe tiene como objetivo analizar la organizacion Aceitera General Deheza S.A. (AGD) desde una mirada administrativa, tecnologica y de control de gestion. La empresa pertenece al sector agroindustrial y alimenticio, con actividades vinculadas a la industrializacion de oleaginosas y cereales, produccion de aceites vegetales, procesamiento de mani, elaboracion de alimentos, exportacion agroindustrial, biodiesel y derivados.</p>
+    <p>El trabajo relaciona lo observado y relevado con conceptos vistos en clase: estructura organizacional, procesos administrativos, infraestructura tecnologica, auditoria, riesgos, indicadores y gestion de proyectos. A partir de ese analisis se propone una mejora concreta: un sistema de gestion de stock para plantas y almacenes, orientado a registrar ubicaciones, existencias, movimientos y pedidos de reabastecimiento.</p>
+
+    <h2>2. Perfil de la Organizacion</h2>
+    <h3>Identificacion</h3>
+    <p>AGD es una empresa argentina del rubro agroindustrial y alimenticio. Su actividad principal se vincula con la fabricacion de proteinas vegetales en forma de harinas y pellets, aceites vegetales, biodiesel y glicerina refinada. Tambien participa en acopio y comercializacion de granos, logistica ferroviaria y portuaria, produccion agropecuaria, marcas de consumo masivo y procesamiento de mani.</p>
+    <p>La empresa fue fundada el 22 de julio de 1948 por Adrian Pascual Urquia en General Deheza, Cordoba. Comenzo como una pequena aceitera y, con el paso del tiempo, incorporo nuevas tecnologias, amplio su capacidad productiva, desarrollo plantas industriales, acopios, infraestructura portuaria y operaciones de exportacion.</p>
+
+    <h3>Trayectoria</h3>
+    <p>Durante sus primeras decadas, AGD paso del procesamiento de lino hacia cultivos como girasol y mani. Luego incorporo procesos industriales mas complejos, extraccion por solvente, refinacion, envasado, infraestructura logistica y presencia en mercados internacionales.</p>
+    <p>Actualmente puede caracterizarse como un grupo agroindustrial integrado. Segun informacion institucional de AGD, su funcionamiento se organiza en cuatro unidades de negocio: Agropecuarios, Marcas, Mani, y Cereales y Oleaginosas. Ademas, cuenta con red de acopios en distintas provincias argentinas y plantas industriales distribuidas en Cordoba, Santa Fe y San Luis.</p>
+
+    <h3>Estructura organizacional</h3>
+    <p>Por su escala, AGD presenta una estructura mayormente mecanicista, aunque con sectores que pueden funcionar de manera mas organica. Es mecanicista porque posee procesos industriales estandarizados, controles formales, areas diferenciadas, procedimientos, auditoria interna y control de gestion. Sin embargo, en areas vinculadas a tecnologia, agricultura de precision, innovacion y desarrollo de plataformas digitales, puede observarse una tendencia mas organica por la necesidad de adaptacion, analisis de datos y mejora continua.</p>
+
+    <h3>Organigrama reconstruido</h3>
+    <pre>Directorio / Alta Direccion
+|
++-- Gerencia General
+    |
+    +-- Unidad Agropecuaria
+    +-- Unidad Marcas
+    +-- Unidad Mani
+    +-- Unidad Cereales y Oleaginosas
+    +-- Produccion Industrial / Plantas
+    +-- Logistica, Ferrocarriles y Puertos
+    +-- Red de Acopios
+    +-- Administracion y Finanzas
+    +-- Recursos Humanos
+    +-- Tecnologia / Sistemas
+    +-- Control de Gestion
+    +-- Auditoria Interna
+    +-- Comercializacion y Exportaciones</pre>
+
+    <h3>Cultura IT</h3>
+    <p>AGD evidencia una cultura tecnologica desarrollada. No parece una organizacion donde la tecnologia sea gestionada informalmente por los duenos, sino una empresa con sistemas corporativos, plataformas digitales y herramientas especializadas.</p>
+    <p>Entre los elementos relevados se encuentran portales para proveedores, consulta de pagos, sistemas de Recursos Humanos, recibos digitales, plataformas para clientes y herramientas asociadas a agricultura de precision. Tambien se identifica el ecosistema Experta Tecnologia AGD, orientado a monitoreo de campos, datos productivos y soporte tecnologico para decisiones agropecuarias.</p>
+
+    <h2>3. Relevamiento de Procesos y Modelado</h2>
+    <h3>Proceso seleccionado</h3>
+    <p>Se selecciona el proceso de <strong>Gestion de Stock en planta</strong>, por ser un circuito clave para una empresa agroindustrial. Este proceso impacta en produccion, administracion, compras, logistica, auditoria y control de gestion.</p>
+
+    <h3>Descripcion del proceso actual AS-IS</h3>
+    <ol>
+      <li>El area de planta o deposito detecta ingreso, salida o necesidad de insumos/productos.</li>
+      <li>El operario o responsable registra el movimiento en el sistema disponible o en planillas auxiliares.</li>
+      <li>El responsable verifica cantidades fisicas y documentacion asociada.</li>
+      <li>Si corresponde, se actualiza el stock en ERP o sistema interno.</li>
+      <li>Si el nivel de stock es bajo, se solicita reposicion o compra.</li>
+      <li>Administracion o Compras evalua la solicitud.</li>
+      <li>Control de Gestion y Auditoria pueden revisar reportes, diferencias o inconsistencias.</li>
+      <li>Gerencia consulta indicadores y reportes para la toma de decisiones.</li>
+    </ol>
+
+    <h3>Flujograma AS-IS</h3>
+    <pre>Inicio
+  |
+Detectar ingreso, salida o necesidad de stock
+  |
+Registrar movimiento en sistema / planilla
+  |
+Verificar cantidad fisica y documentacion
+  |
+¿Coincide la informacion?
+  |------------------ No ------------------|
+  |                                        |
+  Si                                       Registrar diferencia
+  |                                        |
+Actualizar stock en ERP / sistema          Informar a responsable
+  |                                        |
+¿Stock bajo o necesidad de reposicion? &lt;---|
+  |
+  |--- No ---&gt; Generar reporte / finalizar
+  |
+  Si
+  |
+Solicitar reposicion o compra
+  |
+Evaluacion de Compras / Administracion
+  |
+Control y seguimiento
+  |
+Fin</pre>
+
+    <h2>4. Evaluacion de Sistemas y Auditoria</h2>
+    <p>La empresa utiliza ERP J. D. Edwards, software a medida y planillas Excel. Esto indica una infraestructura mixta, con sistemas integrados para procesos centrales y herramientas complementarias para necesidades puntuales.</p>
+    <p>Segun lo relevado, los sistemas poseen seguridad de acceso. Tambien se relevo que la empresa cuenta con un sistema enlatado para backup y que existe una subarea dentro de Tecnologia encargada del tema.</p>
+    <p>AGD cuenta con area de Control de Gestion y Auditoria Interna. Esto fortalece el ambiente de control, porque permite revisar procesos, detectar desvios, evaluar riesgos y proponer mejoras.</p>
+    <p>La empresa utiliza tableros de control, entre ellos Strategy. Estos reportes permiten que la gerencia evalue el funcionamiento de la empresa mediante informacion consolidada.</p>
+
+    <h2>5. Propuesta de Proyecto y Presupuesto</h2>
+    <p>La oportunidad de mejora propuesta consiste en implementar un <strong>Sistema de Gestion de Stock General para Plantas</strong>, basado en el prototipo desarrollado en esta carpeta.</p>
+    <p>El sistema permite crear almacenes, cargar estantes con medidas, ubicar estantes en un plano 2D, visualizar una vista frontal, cargar productos por ubicacion, registrar entradas y salidas, solicitar reabastecimiento y mantener historial de movimientos.</p>
+
+    <h3>Metodologia sugerida</h3>
+    <p>Para este proyecto conviene utilizar una metodologia <strong>Agil, basada en Scrum</strong>, porque la solucion puede construirse por incrementos y validarse con usuarios reales de planta. Scrum permite recibir devolucion temprana de operarios, responsables de planta, administracion y control de gestion.</p>
+
+    <h3>Estimacion de horas</h3>
+    <table>
+      <thead>
+        <tr><th>Actividad</th><th>Horas estimadas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Relevamiento funcional y entrevistas</td><td>24</td></tr>
+        <tr><td>Analisis de riesgos y puntos de control</td><td>12</td></tr>
+        <tr><td>Diseno de base de datos y arquitectura</td><td>20</td></tr>
+        <tr><td>Diseno UX/UI del sistema</td><td>18</td></tr>
+        <tr><td>Desarrollo frontend</td><td>45</td></tr>
+        <tr><td>Desarrollo backend y API</td><td>55</td></tr>
+        <tr><td>Autenticacion, roles y permisos</td><td>22</td></tr>
+        <tr><td>Modulo de stock y movimientos</td><td>40</td></tr>
+        <tr><td>Reportes y alertas</td><td>24</td></tr>
+        <tr><td>Pruebas funcionales</td><td>24</td></tr>
+        <tr><td>Documentacion y capacitacion</td><td>16</td></tr>
+        <tr><td>Puesta en marcha piloto</td><td>20</td></tr>
+        <tr><th>Total estimado</th><th>320</th></tr>
+      </tbody>
+    </table>
+
+    <h3>Costo total estimado</h3>
+    <pre>Valor hora = Ingreso mensual objetivo / horas facturables mensuales
+
+Ingreso mensual objetivo: $1.920.000
+Horas facturables mensuales: 160
+Valor hora profesional: $12.000
+
+320 horas x $12.000 = $3.840.000</pre>
+
+    <h2>6. Conclusion y Reflexion Critica</h2>
+    <p>El analisis de AGD permite observar la diferencia entre una empresa pequena o mediana y una organizacion agroindustrial de gran escala. En la teoria se estudian estructuras, procesos, sistemas, controles e indicadores como elementos separados; en la realidad empresarial todos esos elementos se relacionan entre si.</p>
+    <p>AGD muestra una estructura formalizada, procesos controlados, sistemas corporativos, areas de auditoria y control de gestion, y una cultura tecnologica avanzada. Sin embargo, incluso en organizaciones grandes pueden existir oportunidades de mejora, especialmente cuando conviven ERP, software a medida y planillas auxiliares.</p>
+    <p>El principal desafio para modernizar sistemas administrativos no es solamente incorporar tecnologia, sino lograr que esa tecnologia se integre con los procesos reales, sea adoptada por los usuarios y genere informacion confiable para la toma de decisiones.</p>
+
+    <h2>7. Anexos</h2>
+    <p><strong>Anexo A:</strong> Prototipo de sistema compuesto por <code>index.html</code>, <code>styles.css</code> y <code>app.js</code>.</p>
+    <p><strong>Anexo B:</strong> Capturas sugeridas: sitio oficial de AGD, prototipo funcionando, flujograma, notas de campo y link del sistema publicado en Render.</p>
+
+    <h2>8. Referencias</h2>
+    <p>Aceitera General Deheza. (s. f.). <em>Aceitera General Deheza</em>. https://www.agd.com.ar/</p>
+    <p>Aceitera General Deheza. (s. f.). <em>Aceitera General Deheza S.A.</em>. https://www.agd.com.ar/es/aceitera-general-deheza-sa</p>
+    <p>Agricultura Experta. (2026). <em>Experta Tecnologia AGD</em>. https://agriculturaexperta.com/</p>
+    <p>Render. (2026). <em>Static Sites</em>. https://render.com/docs/static-sites/</p>
+    <p>Render. (2026). <em>Blueprint YAML Reference</em>. https://render.com/docs/blueprint-spec</p>
+  </body>
+</html>
